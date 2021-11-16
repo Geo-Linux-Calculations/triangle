@@ -13,7 +13,7 @@
 #   directory where you want to put the executable programs.  By default,
 #   both are the current directory.
 
-SRC = ./
+SRC = ./src/
 BIN = ./
 
 # CC should be set to the name of your favorite C compiler.
@@ -101,7 +101,7 @@ trilibrary: $(BIN)triangle.o $(BIN)tricall
 $(BIN)triangle: $(SRC)triangle.c
 	$(CC) $(CSWITCHES) -o $(BIN)triangle $(SRC)triangle.c -lm
 
-$(BIN)tricall: $(BIN)tricall.c $(BIN)triangle.o
+$(BIN)tricall: $(SRC)tricall.c $(BIN)triangle.o
 	$(CC) $(CSWITCHES) -o $(BIN)tricall $(SRC)tricall.c \
 		$(BIN)triangle.o -lm
 

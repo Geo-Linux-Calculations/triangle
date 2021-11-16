@@ -51,11 +51,11 @@ free, then you are not required to make any arrangement with me.)
 The files included in this distribution are:
 
   README           The file you're reading now.
-  triangle.c       Complete C source code for Triangle.
-  showme.c         Complete C source code for Show Me.
-  triangle.h       Include file for calling Triangle from another program.
-  tricall.c        Sample program that calls Triangle.
-  makefile         Makefile for compiling Triangle and Show Me.
+  Makefile         Makefile for compiling Triangle and Show Me.
+  src/triangle.c   Complete C source code for Triangle.
+  src/showme.c     Complete C source code for Show Me.
+  src/triangle.h   Include file for calling Triangle from another program.
+  src/tricall.c    Sample program that calls Triangle.
   A.poly           A sample input file.
 
 Each of Triangle and Show Me is a single portable C file.  The easiest way
@@ -85,13 +85,13 @@ accordingly.  You should specify:
 Once you've done this, type "make" to compile the programs.  Alternatively,
 the files are usually easy to compile without a makefile:
 
-  cc -O -o triangle triangle.c -lm
-  cc -O -o showme showme.c -lX11
+  cc -O -o triangle src/triangle.c -lm
+  cc -O -o showme src/showme.c -lX11
 
 On some systems, the C compiler won't be able to find the X include files
 or libraries, and you'll need to specify an include path or library path:
 
-  cc -O -I/usr/local/include -o showme showme.c -L/usr/local/lib -lX11
+  cc -O -I/usr/local/include -o showme src/showme.c -L/usr/local/lib -lX11
 
 Some processors, including Intel x86 family and possibly Motorola 68xxx
 family chips, are IEEE conformant but have extended length internal
